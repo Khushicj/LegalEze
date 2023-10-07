@@ -71,17 +71,60 @@
 
     <div class="lg:w-1/2 pt-10">
       <h1 class="text-3xl lg:text-4xl text-center font-bold ml-6 pt-20">Get Easy Simplification And Translation For Your Docs Here</h1>
-  
-      <div class="flex justify-center pt-6">
-        <a href="file.html" class="mt-4 lg:mt-8  px-6 py-3 lg:px-8 lg:py-4 bg-black text-white text-lg lg:text-xl rounded-full hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-black" >Select a File</a>
-      </div>
+    
+    <div class=" flex items-center justify-center">
+      <!-- <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm"> -->
+          <label for="fileInput" class="mt-4 lg:mt-8 px-6 py-3 lg:px-8 lg:py-4 bg-black text-white text-lg lg:text-xl rounded-full hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-black cursor-pointer">
+              <i class="fas fa-upload mr-2"></i>Upload File
+          </label>
+        <input type="file" name="pdfFile" id="fileInput" class="hidden" accept=".pdf, .docx, .txt" action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+        <!-- <button type="submit">Upload PDF</button>
+      </form> -->
+  </div>
+
+  <script>
+    const uploadForm = document.getElementById('uploadForm');
+  const fileInput = document.getElementById('fileInput');
+
+  uploadForm.addEventListener('submit', async (e) => {
+    const formData = new FormData();
+    formData.append('pdfFile', fileInput.files[0]);
+
+    try {
+      const response = await fetch('/upload', {
+        method: 'POST',
+        body: formData,
+      });
+    
+    // JavaScript code to extract the PDF URL from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+      const pdfUrl = urlParams.get("pdf");
+
+      if (pdfUrl) {
+        // Use the pdfUrl as needed, e.g., display it or process it
+        console.log("PDF URL:", pdfUrl);
+      } else {
+        console.error("No PDF URL found in query parameters.");
+      }
+    
+    }
+    catch(e){
+        console.log(e.message)
+    }});
+
+</script>
+
+
     </div>
     
     
     <div class="lg:w-1/2">
-      <img src="/img/doc upload.png" alt="doc upload png" class="mx-auto mt-8 lg:mt-0 max-w-xs lg:max-w-full pt-10">
+      <img src="./img/doc upload.png" alt="doc upload png" class="mx-auto mt-8 lg:mt-0 max-w-xs lg:max-w-full pt-10">
     </div>
 </div>
+
+</section>
+
 
 </section>
 
