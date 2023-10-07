@@ -51,7 +51,7 @@
 
 <script>
     
-    const openPopupButton = document.getElementById("openPopupButton");
+    const openPopupButton = document.getElementById("openPopupB9utton");
     const closePopupButton = document.getElementById("closePopupButton");
     const popupOverlay = document.getElementById("popupOverlay");
 
@@ -178,7 +178,7 @@
     <div class="flex flex-col md:flex-row items-center justify-center p-4 min-h-screen">
       <!-- Left side text element -->
       <div class="md:w-1/2 pb-5">
-          <h1 class="text-3xl lg:text-4xl text-center font-bold ml-6 mb-16 pt-20">Get Relevant Answers to your Questions</h1>
+         <img src="/img/FAQ 2.png" height="350px" width="650px" alt="">
       </div>
       
       <!-- Right side input text and send button -->
@@ -189,33 +189,91 @@
           </button>
       </div> -->
 
+      <div class="md:w-1/2 pb-5">
+      <div class="faq space-y-3 ">
+    <div class="bg-white shadow-md rounded-lg p-4">
+        <div class="question">
+            <h2 class="text-lg font-semibold">How Does LegalEze Works?<i class="arrow down"></i></h2>
+            <div class="answer">
+                <p>LegalEze is a AI document simplifier that will convert  documents with difficult legal terms easy to understand for people.</p>
+            </div> 
+        </div>
+     </div>
+        <div class=" question bg-white question shadow-md rounded-lg p-4">
+            <h2 class="text-lg font-semibold">Is user data privacy maintained during document processing?
+            </h2>
+            <div class="answer">
+                <p>Yes, typically, LegalEze prioritize user data privacy during document processing. Privacy measures are often in place to protect sensitive information.</p>
+            </div>
+        </div>
+        <div class="question bg-white question shadow-md rounded-lg p-4">
+            <h2 class="text-lg font-semibold">Is the AI capable of handling documents in multiple languages?
+            </h2>
+            <div class="answer">
+                <p>Yes, the LegalEze is often capable of handling documents in multiple languages, offering versatility and national applicability.
 
-      <div class="faq">
-        <div class="question">
-            <h2>Question 1?</h2>
-            <div class="answer">
-                <p>This is the answer to question 1.</p>
+
+
+
+                    .</p>
             </div>
         </div>
-        <div class="question">
-            <h2>Question 2?</h2>
+        <div class="question bg-white question shadow-md rounded-lg p-4">
+            <h2 class="text-lg font-semibold">Is the AI Document Simplifier suitable for legal documents and contracts?</h2>
             <div class="answer">
-                <p>This is the answer to question 2.</p>
-            </div>
-        </div>
-        <div class="question">
-            <h2>Question 3?</h2>
-            <div class="answer">
-                <p>This is the answer to question 3.</p>
+                <p>Yes, LegalEze is often suitable for legal documents and contracts as it can enhance clarity and understanding, making legal proceedings more efficient and accessible. .</p>
             </div>
         </div>
     </div>
+</div>
   </div>
-  
+  <script>
+    // Get all elements with the class "question"
+const questions = document.querySelectorAll('.question');
+
+// Add a click event listener to each question
+questions.forEach(question => {
+    const answer = question.querySelector('.answer');
+    
+    question.addEventListener('click', () => {
+        // Toggle the "active" class on the clicked question
+        question.classList.toggle('active');
+        
+        // Toggle the visibility of the answer
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+// Add the down arrow element to each question
+questions.forEach(question => {
+    const downArrow = document.createElement('span');
+    downArrow.textContent = '▼'; // You can change this to any down arrow character or icon
+    
+    // Add the down arrow class
+    downArrow.classList.add('down-arrow');
+    
+    // Append the down arrow element to the question
+    question.querySelector('h2').appendChild(downArrow);
+});
+
+  </script>
     
   
 
 </section>
+<!-- Footer Section -->
+
+<section class="copy">
+    <footer>
+    <div calss="container">
+      <div class="bottomend">
+        <p style="text-align:center;">LegalEze © 2023 | Made in INDIA with ❤️ </p>
+      </div>
+                
+      </div>
+      </footer>
+    </section>
+
 
 
 

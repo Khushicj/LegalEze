@@ -67,20 +67,22 @@
 
 
 
+
 /* Style the FAQ container */
 .faq {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
 /* Style the questions */
 .question {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
+    /* border: 1px solid #ccc; */
+    /* margin-bottom: 10px;
+    padding: 10px; */
+    /* background-color: #b7c6ff; */
     cursor: pointer;
+    
 }
 
 /* Style the question text */
@@ -97,3 +99,48 @@
 .question.active .answer {
     display: block;
 }
+.question.active {
+    /* background-color: #f9f9f9; */
+    cursor: pointer;
+}
+
+/* Hide answers by default */
+.answer {
+    display: none;
+}
+/* Style for the down arrow indicator */
+.down-arrow {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.2s;
+}
+
+/* Rotate the down arrow when the question is active (open) */
+.question.active .down-arrow {
+    transform: rotate(180deg);
+} 
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+    font-size: 14px;
+    background-color: rgb(225, 230, 246);
+    /* background-image: url("../img/hero-bg.png"); */
+    
+    color: white;
+  }
+  .footer P {
+    font-size: 20px;
+    color: #080808;
+    position: relative;
+    padding-bottom: 38px;
+  }
+  .copy{
+  background-color: #080808;
+  }
+  .bottomend p{
+    color: #b9d0f1;
+    font-size: 30px;
+  }
+  
